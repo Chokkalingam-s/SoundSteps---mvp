@@ -9,7 +9,6 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM events ORDER BY id ASC";
 $result = $conn->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,6 +59,54 @@ $result = $conn->query($sql);
             vertical-align: center;
             
         }
+        .carousel-image {
+  position: relative;
+  left: 400px;
+}
+.carousel-caption-custom {
+  color: black;
+  z-index: 1;
+  position: absolute;
+  right: 200px;
+  top: 100px;
+  font-style: italic;
+}
+.display-4{
+  position: relative;
+  left: -250px;
+}
+.relative {
+  position: relative;
+}
+
+.vertical-box {
+  position: absolute;
+  top: 130px;
+  left: -320;
+  right: 1220px;
+  width: 400px; /* Adjust width as needed */
+  height: 400px; /* Full height */
+  background: #388da8; /* Semi-transparent background */
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  rotate: 45deg;
+}
+
+.carousel-caption-custom {
+  color: black;
+  position: absolute;
+  right: 200px;
+  top: 100px;
+  font-style: italic;
+}
+.carousel-item{
+  margin-top: 50px;
+}
     </style>
 </head>
 
@@ -91,36 +138,118 @@ $result = $conn->query($sql);
 
   <main class="main">
     <!-- Carousel -->    
-    <div id="carouselExampleIndicators" id="hero" class="carousel slide" style="margin-top: 13vh;" data-bs-ride="carousel" data-bs-interval="4700">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <!-- Carousel with wave background -->
+<div id="carouselExampleIndicators" id="hero" class="carousel slide" style="margin-top: 13vh; height: 500px; position: relative;" data-bs-ride="carousel" data-bs-interval="1800">
+  <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+
+  <div class="carousel-inner" style="height: 100%;">
+      <div class="carousel-item active">
+          <div class="d-flex justify-content-center align-items-center h-100">
+              <img class="bd-placeholder-img bd-placeholder-img-lg d-block mx-auto carousel-image" src="assets/img/1.png" alt="First slide" style="height: 350px; width: 370px; object-fit: cover;">
+              <div class="carousel-caption carousel-caption-custom d-none d-md-block text-center">
+                  <h1 class="display-4">Streamlining Healthcare</h1>
+                  <p class="lead">Streamlining healthcare, one digital step at a time.</p>
+              </div>
+          </div>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" src="assets/img/MB2.jpg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-        </div>
-        <div class="carousel-item">
-          <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" src="assets/img/MB3.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-        </div>
-        <div class="carousel-item">
-          <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" src="assets/img/MB1.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-        </div>
-        <div class="carousel-item">
-          <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" src="assets/img/MB4.jpg" role="img" aria-label="Placeholder: Fourth slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-        </div>
+      <div class="carousel-item">
+          <div class="d-flex justify-content-center align-items-center h-100">
+              <img class="bd-placeholder-img bd-placeholder-img-lg d-block mx-auto carousel-image" src="assets/img/2.png" alt="Second slide" style="height: 350px; width: 400px; object-fit: cover;">
+              <div class="carousel-caption carousel-caption-custom d-none d-md-block text-center">
+                  <h1 class="display-4">Empowering Digital Care</h1>
+                  <p class="lead">Empowering doctors and patients with seamless digital care.</p>
+              </div>
+          </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+      <div class="carousel-item">
+          <div class="d-flex justify-content-center align-items-center h-100">
+              <img class="bd-placeholder-img bd-placeholder-img-lg d-block mx-auto carousel-image" src="assets/img/3.png" alt="Third slide" style="height: 350px; width: 400px; object-fit: cover;">
+              <div class="carousel-caption carousel-caption-custom d-none d-md-block text-center">
+                  <h1 class="display-4">Revolutionizing Patient Care</h1>
+                  <p class="lead">From manual to digital: Revolutionizing patient care with precision.</p>
+              </div>
+          </div>
+      </div>
+      <div class="carousel-item">
+          <div class="d-flex justify-content-center align-items-center h-100">
+              <img class="bd-placeholder-img bd-placeholder-img-lg d-block mx-auto carousel-image" src="assets/img/4.png" alt="Fourth slide" style="height:350px; width: 400px; object-fit: cover;">
+              <div class="carousel-caption carousel-caption-custom d-none d-md-block text-center">
+                  <h1 class="display-4">Better Care and Outcomes</h1>
+                  <p class="lead">Real-time collaboration for better care and better outcomes.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+  </button>
+
+  <!-- Wave Background (Inside Carousel) -->
+  <div class="ocean" style="position: absolute; bottom: 0; width: 100%; height: 120px;">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+  </div>
+</div>
+
+<!-- Wave Styles -->
+<style>
+  .ocean {
+        height: 80px; /* Wave height */
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow-x: hidden;
+    }
+
+    .wave {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='%23388da8'/%3E%3C/svg%3E");
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        animation: wave 10s -3s linear infinite;
+        transform: translate3d(0, 0, 0);
+        opacity: 0.8;
+    }
+
+    .wave:nth-of-type(2) {
+        bottom: 0;
+        animation: wave 18s linear reverse infinite;
+        opacity: 0.5;
+    }
+
+    .wave:nth-of-type(3) {
+        bottom: 0;
+        animation: wave 20s -1s linear infinite;
+        opacity: 0.5;
+    }
+.height{
+  position: relative;
+  margin-top: -100px;
+}
+    @keyframes wave {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-25%); }
+        100% { transform: translateX(-50%); }
+    }
+</style>
+
+
+    
+    
      <!-- Carousel End-->  
 
     <!-- Featured Services Section -->
@@ -164,19 +293,22 @@ $result = $conn->query($sql);
     <!-- About Section -->
     <section id="about" class="about section">
       <div class="container">
-          <div class="row gy-4" >
-              <div class="col-lg-6 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4 height">
+              <div class="col-lg-6 content d-flex flex-column justify-content-center " data-aos="fade-up" data-aos-delay="100">
                   <p class="who-we-are">Who We Are</p>
-                  <h3 style="text-align:left">Psychology delves into Understanding Human Behaviors, Thoughts, & Emotions to Aid Adaptation</h3>
+                  <h3 style="text-align:left">Welcome to SoundSteps: Revolutionizing Healthcare Management</h3>
                   <p class="fst-italic">
-                      It's distinct from psychiatry, pediatrics, or social work, focusing on mental processes, brain functions, and behavior. Psychologists address well-being, treating disorders like Personality Disorder or OCD. Despite misconceptions of granting "superpowers," psychology aims to alleviate stigma and provide accurate understanding.
+                      At SoundSteps, we bridge the gap between patients, junior doctors, and senior doctors with a seamless, real-time collaboration system that simplifies and enhances patient care.
                   </p>
                   <ul>
-                      <li><i class="bi bi-check-circle"></i> <span>Mental health struggles often face societal misunderstanding, labeled as "weakness" or "drama."</span></li>
-                      <li><i class="bi bi-check-circle"></i> <span>Seeking professional help remains paramount, though some misconstrue medication as the sole solution.</span></li>
-                      <li><i class="bi bi-check-circle"></i> <span>In essence, while friends and family offer support, professional intervention is irreplaceable in fostering mental wellness.</span></li>
+                      <li><i class="bi bi-check-circle"></i> <span>Digitizing hospital workflows such as patient allocation, e-prescriptions, and session tracking.</span></li>
+                      <li><i class="bi bi-check-circle"></i> <span>Enabling real-time collaboration between junior and senior doctors for faster decision-making and mentoring.</span></li>
+                      <li><i class="bi bi-check-circle"></i> <span>Creating a connected, efficient, and transparent healthcare ecosystem to improve care outcomes.</span></li>
                   </ul>
-                  <!-- <a href="#" class="read-more"><span>Book Session</span><i class="bi bi-arrow-right"></i></a> -->
+                  <p class="fst-italic">
+                      Join us in empowering the healthcare system with cutting-edge technology and transforming how healthcare services are delivered. Together, we’re creating a brighter, healthier future.
+                  </p>
+                  <!-- <a href="#" class="read-more"><span>Learn More</span><i class="bi bi-arrow-right"></i></a> -->
               </div>
   
               <div class="col-lg-6 about-images d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
@@ -185,6 +317,8 @@ $result = $conn->query($sql);
           </div>
       </div>
   </section>
+  
+    
     <!-- End About Section -->
 
     <div class="container counter-section">
@@ -210,9 +344,9 @@ $result = $conn->query($sql);
       <div class="container section-title" data-aos="fade-up">
         <h2>Myths and Facts</h2>
       </div><!-- End Section Title -->
-
+    
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+    
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -240,95 +374,63 @@ $result = $conn->query($sql);
             }
           </script>
           <div class="swiper-wrapper">
-
+    
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">    
-                <h6> <i>Myths-</i> If a person has a mental health condition, it
-                  means the person has low intelligence.</h6>
-                    <p><i>Fact-</i> Mental illness, like physical illness, can affect anyone
-                  regardless of intelligence, social class, or income level.</p>
+                  <h6><i>Myth : </i>Manual therapy documentation is more reliable than digital systems.</h6>
+                  <p><i>Fact: </i>Digital documentation reduces errors, ensures real-time updates, and improves collaboration between doctors, making the process more efficient and reliable.</p>
                 </div>
               </div>
             </div><!-- End testimonial item -->
-
+    
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
-                <h6><i>Myth: </i>Nothing can be done to protect people from
-                  developing mental health conditions.</h6>
-                    <p><i>Fact-</i> Many factors can protect people from developing mental
-                  health conditions, as strengthening social and emotional
-                  skills, seeking support early on,
-                  loving, warm relationships, having a positive school
-                  environment & healthy sleep patterns.</p>
-                  </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">         
-                <h6><i>Myth:</i> A mental health condition is a sign of weakness; if
-                  the person were stronger, they would not have this
-                  condition.</h6>
-                    <p><i>Fact -</i>Anyone can develop a mental health condition. A mental
-                  health condition has nothing to do with being weak or lacking
-                  willpower.</p>
+                  <h6><i>Myth : </i>Junior doctors don’t need real-time feedback; it can wait until scheduled reviews.</h6>
+                  <p><i>Fact: </i>Immediate feedback from senior doctors helps junior doctors improve their skills faster and enhances patient outcomes through timely adjustments in care.</p>
                 </div>
               </div>
             </div><!-- End testimonial item -->
-
+    
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">         
+                  <h6><i>Myth : </i>Patients need to visit the hospital in person for every consultation or therapy session.</h6>
+                  <p><i>Fact: </i>With our platform, patients can access digital consultations, manage their treatment plans online, and participate in remote therapy activities, reducing the need for frequent hospital visits.</p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+    
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars"> 
-                <h6><i>Myth: </i>Therapy and self-help are a waste of time. Why bother when you can just take a pill?</h6>
-                <p><i>Fact- </i> Treatment for mental health conditions vary depending on the individual and could include medication,
-                   therapy, or both. Many individuals do best when they work with a support system during the healing and recovery process.</p>
-              </div>
+                  <h6><i>Myth : </i>Automating patient allocation may cause errors and mismatches in care assignments.</h6>
+                  <p><i>Fact: </i>Automated patient allocation ensures that cases are assigned based on availability and expertise, minimizing errors and ensuring the best possible care.</p>
+                </div>
               </div>
             </div><!-- End testimonial item -->
-
+    
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars"> 
+                  <h6><i>Myth : </i>Therapies can’t be effectively monitored or assessed without in-person evaluations.</h6>
+                  <p><i>Fact: </i>Digital tracking systems allow for continuous monitoring of therapy sessions and patient progress, with real-time data accessible to both junior and senior doctors for accurate assessments.</p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+    
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
+    
       </div>
-
+    
     </section><!-- /Myths Section End -->
+    
 
     <!-- Expert Section -->
-    <section id="features" class="features section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-          <h2>Expert</h2>
-      </div><!-- End Section Title -->
-  
-      <div class="container">
-          <div class="row flex-lg-nowrap flex-wrap justify-content-between">
-
-            <!-- Image Column -->
-            <div class="col-lg-4 image-column d-flex align-items-start justify-content-center" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/mam.jpg" alt="Mrs.Tamana Sharma" class="img-fluid">
-          </div><!-- End Image Column -->
-              <!-- Content Column -->
-              <div class="col-lg-8 content d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
-                  <div class="expert-content">
-                      <ul class="team-social">
-                          <li>Ms. Tamana Sharma, with an MSc in Applied Psychology from Guru Jambheshwar University (2010), has cultivated a career dedicated to advancing mental health and personal development. Her professional journey began as a psychologist trainee at Arya Hospital, Chandigarh (2012-2013), where she gained essential clinical experience. This foundational period was followed by a significant tenure at Ishh Guidance and Counselling Centre in Panchkula (2013-2020), where she provided comprehensive psychological services, including individual counseling, psychological assessments, and therapeutic interventions.</li>
-                          <li>The COVID-19 pandemic necessitated a shift to online counseling (2020-2022), during which she continued to support clients' mental health needs remotely, demonstrating adaptability and commitment to her practice. In 2022, she founded Bloom with Us Guidance and Counselling Centre, a private counseling center that offers personalized mental health services, career counseling, and personal development workshops.</li>
-                          <li class="more-content">Throughout her career, Mrs. Tamana Sharma has been actively involved in conducting workshops on a variety of crucial topics such as aptitude and career counseling, parenting, sex education, and personality development. These workshops have been held at reputable institutions including Northern Railways, DAV School, and Hans Raj School, allowing her to reach and impact a wide audience. Additionally, she has organized psychological testing and behavioral therapy sessions across Chandigarh, Haryana, Ambala, and Shimla, further extending her influence in the field.</li>
-                          <li class="more-content">Her commitment to social activism is evidenced by her organization of free education and health camps, and participation in environmental, Anti-AIDS, and Anti-Drugs campaigns. She has also been actively involved in the National Service Scheme (NSS) and holds an NCC ‘C’ certificate, reflecting her dedication to community service and leadership. In recent years, her work has focused on career counseling, mental health lectures, personality testing, and individual and matrimonial counseling sessions.</li>
-                          <li class="more-content">Mrs. Tamana Sharma has embraced social media, particularly Instagram, to share insights and tips for mental growth and personal development, thereby fostering a supportive online community. Her comprehensive experience, community involvement, and innovative approach to online counseling underscore her dedication to enhancing mental health and personal development for individuals and communities alike.</li>
-                      </ul>
-                      <button class="read-more btn btn-primary" style="background-color: #388ea8cb; margin-left: 42%;">Read More</button>
-                  </div>
-              </div><!-- End Content Column -->
-  
-              
-          </div>
-      </div>
-  </section><!-- /Expert Section -->
+   
 
     <!-- Sessions Section -->
     <section id="services" class="services section light-background">
@@ -339,45 +441,7 @@ $result = $conn->query($sql);
         <div class="container">
                 <div class="row">
 
-                    <?php
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $title = htmlspecialchars($row['title']);
-                            $description = nl2br(htmlspecialchars($row['description']));;
-                            $images = json_decode($row['images'], true);
-                    ?>
-
-                            <div class="col-md-6">
-                                <!-- Event Card Start -->
-                                <div class="card event-card">
-                                    <div class="card-header event-card-header">
-                                        <h5 class="card-title event-card-title"><?php echo $title; ?></h5>
-                                    </div>
-                                    <div class="card-body event-card-body">
-                                        <p class="card-text event-card-description"><?php echo $description; ?></p>
-                                        <div class="row">
-                                            <?php
-                                            $imageCount = count($images);
-                                            $limit = min($imageCount, 2); // Show maximum of 2 images
-                                            for ($i = 0; $i < $limit; $i++) {
-                                                echo '<div class="col-6">';
-                                                echo '<img src="uploads/' . $images[$i] . '" alt="' . $title . ' Image ' . ($i + 1) . '" class="event-image" data-bs-toggle="modal" data-bs-target="#eventModal">';
-                                                echo '</div>';
-                                            }
-                                            ?>
-                                        </div>
-                                        <div class="d-flex justify-content-center mt-3"> <!-- Center align button -->
-                                       <?php
-                                          if ($imageCount > 2) {
-                                              echo '<button class="btn btn-primary view-more-btn" style="background-color: #388da8;" data-bs-toggle="modal" data-bs-target="#eventModal_' . $row['id'] . '">View More Images</button>';
-                                          }
-                                          ?>
-                                      </div>
-                                    </div>
-                                </div>
-                                <!-- Event Card End -->
-                            </div>
-
+                   
                             <!-- Modal for Images -->
                             <div class="modal fade" id="eventModal_<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="eventModalLabel_<?php echo $row['id']; ?>" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
@@ -389,13 +453,7 @@ $result = $conn->query($sql);
                                         <div class="modal-body" style="max-height: calc(100vh - 200px); overflow-y: auto;">
                                             <div id="carouselExampleControls_<?php echo $row['id']; ?>" class="carousel slide" data-bs-ride="carousel">
                                                 <div class="carousel-inner">
-                                                    <?php
-                                                    foreach ($images as $index => $image) {
-                                                        echo '<div class="carousel-item ' . ($index === 0 ? 'active' : '') . '">';
-                                                        echo '<img src="uploads/' . $image . '" class="d-block w-100" style="object-fit:contain;height:auto; max-height:95vh;" alt="Event Image ' . ($index + 1) . '">';
-                                                        echo '</div>';
-                                                    }
-                                                    ?>
+
                                                 </div>
                                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls_<?php echo $row['id']; ?>" data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -411,13 +469,7 @@ $result = $conn->query($sql);
                                 </div>
                             </div>
                             <!-- End Modal -->
-                    <?php
-                        }
-                    } else {
-                        echo "No events found";
-                    }
-                    $conn->close();
-                    ?>
+
                 </div>
       </div>
     </section><!-- /Sessions Section -->
@@ -429,72 +481,65 @@ $result = $conn->query($sql);
       <div class="container section-title" data-aos="fade-up">
         <h2>Frequently Asked Questions</h2>
       </div><!-- End Section Title -->
-
+    
       <div class="container">
-
+    
         <div class="row justify-content-center">
-
+    
           <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
+    
             <div class="faq-container">
-
+    
               <div class="faq-item faq-active">
-                <h3>What is the difference between a psychologist and a psychiatrist?</h3>
+                <h3>How can I contact my doctor directly?</h3>
                 <div class="faq-content">
-                  <p>Psychologists primarily provide talk therapy and behavioral interventions, while psychiatrists are medical doctors who can prescribe medication for mental health conditions. Both professionals often collaborate to provide comprehensive care.</p>
+                  <p>You can directly message your doctor by entering their unique doctor code in the prescription form on the SoundSteps portal. Use the query section to send them messages or updates.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
-
+    
               <div class="faq-item">
-                <h3>How do I know if I need to see a psychologist?</h3>
+                <h3>What remote activities can I do at home to improve my speech?</h3>
                 <div class="faq-content">
-                  <p>If you're experiencing persistent emotional distress, changes in mood, difficulties coping with daily activities, or overwhelming stress, consulting a psychologist can help you understand and manage these issues effectively.</p>
-                  </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>How confidential are my sessions with a psychologist?</h3>
-                <div class="faq-content">
-                  <p> Psychologists adhere to strict confidentiality guidelines. Information shared in therapy is protected and will only be disclosed with your consent or if required by law (e.g., in cases of imminent harm).</p>
+                  <p>Access our open-source activities and interactive speech therapy games available for free in the SoundSteps portal, designed to enhance your therapy from home.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
-
+    
               <div class="faq-item">
-                <h3>How long does therapy typically last?</h3>
+                <h3>How do I know if my doctor has reviewed my prescription?</h3>
                 <div class="faq-content">
-                  <p> The duration of therapy varies depending on individual needs. Some people may find relief in a few sessions, while others might benefit from longer-term therapy. Your psychologist will work with you to determine the best approach.</p>
+                  <p>Once your prescription is reviewed and approved by your senior doctor, you will receive a notification in your SoundSteps account with their feedback and suggestions.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
-
+    
               <div class="faq-item">
-                <h3>What are the signs of depression?</h3>
+                <h3>What should I do if I miss a therapy session?</h3>
                 <div class="faq-content">
-                  <p> Common signs of depression include persistent sadness, loss of interest in activities, changes in appetite or sleep patterns, fatigue, feelings of worthlessness, and difficulty concentrating. If you experience these symptoms, seeking professional help is recommended.</p>
+                  <p>If you miss a session, the system will notify both you and your therapist. You can easily reschedule the session through the booking feature in the portal.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
-
+    
               <div class="faq-item">
-                <h3>How do I book a session with a psychologist?</h3>
+                <h3>How are junior and senior doctors involved in my treatment?</h3>
                 <div class="faq-content">
-                  <p>You can book a session through our website's booking system or contact us directly via phone or email. Our team will assist you in scheduling an appointment at a convenient time.</p>
+                  <p>Junior doctors manage your day-to-day treatment and prescriptions, while senior doctors supervise, review, and provide approval for your therapy plan, ensuring quality care at all times.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
-
+    
             </div>
-
+    
           </div><!-- End Faq Column-->
-
+    
         </div>
-
+    
       </div>
-
+    
     </section><!-- /Faq Section -->
+    
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -527,11 +572,11 @@ $result = $conn->query($sql);
                     <!-- End Info Item -->
     
                     <div class="col-lg-6 col-md-6">
-                      <a href="mailto:SoundStepscounselling@gmail.com" style=" text-decoration: none;">
+                      <a href="mailto:Bloomwithuscounselling@gmail.com" style=" text-decoration: none;">
                         <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
                             <i class="bi bi-envelope"></i>
                             <h3>Email Us</h3>
-                            <p>SoundStepscounselling@gmail.com</p>
+                            <p>Bloomwithuscounselling@gmail.com</p>
                         </div>
                         </a>
                     </div>
