@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 include 'db_connection.php';
 
 $conn = new mysqli($servername, $db_username, $db_password, $dbname);
@@ -8,7 +8,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM events ORDER BY id ASC";
 $result = $conn->query($sql);
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,12 +127,12 @@ $result = $conn->query($sql);
           <li><a href="#features">Expert</a></li>
           <li><a href="#services">Sessions</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="login.php">Admin</a></li>
+          <li><a href="login.html">Admin</a></li>
         </ul>
         
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="ab.php">Appointment</a>
+      <a class="btn-getstarted" href="ab.html">Appointment</a>
     </div>
   </header>
 
