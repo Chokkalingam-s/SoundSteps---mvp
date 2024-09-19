@@ -324,16 +324,16 @@ $result = $conn->query($sql);
     <div class="container counter-section">
       <div class="row">
           <div class="col-md-4">
-              <div class="counter"><strong><span id="peopleTreated">0</span><span class="plus-sign">+</span></strong></div>
+              <div class="counter"><strong><span id="peopleTreated">500</span><span class="plus-sign">+</span></strong></div>
+              <div class="counter-description"><h4><strong>Hospitals</strong></h4></div>
+          </div>
+          <div class="col-md-4">
+              <div class="counter"><strong><span id="lecturesSeminars">50,000</span><span class="plus-sign">+</span></strong></div>
               <div class="counter-description"><h4><strong>Lives Transformed</strong></h4></div>
           </div>
           <div class="col-md-4">
-              <div class="counter"><strong><span id="lecturesSeminars">0</span><span class="plus-sign">+</span></strong></div>
-              <div class="counter-description"><h4><strong>Seminars Conducted</strong></h4></div>
-          </div>
-          <div class="col-md-4">
-              <div class="counter"><strong><span id="yearsExperience">0</span><span class="plus-sign">+</span></strong></div>
-              <div class="counter-description"><h4><strong>Consultancy Experience</strong></h4></div>
+              <div class="counter"><strong><span id="yearsExperience">1000</span><span class="plus-sign">+</span></strong></div>
+              <div class="counter-description"><h4><strong>Therapist</strong></h4></div>
           </div>
       </div>
   </div>
@@ -554,29 +554,29 @@ $result = $conn->query($sql);
             <div class="col-lg-6">
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
                     <i class="bi bi-geo-alt"></i>
-                    <h3>Address</h3>
-                    <p>#132/6, Mansa Devi Complex, Sector 4,
-                      Panchkula, Haryana, India, 134109</p>
+                    <h3>Ali yavar jung national institute</h3>
+                    <a href="https://ayjnihh.nic.in/"> Official Website : ayjnihh.nic.in </a>
+                    <p>Ali Yavar Jung National Institute of Speech and Hearing Disabilities (Divyangjan) <br>K.C. Marg, Bandra (W) Reclamation Mumbai - 400 050</p>
                 </div>
                 <!-- End Info Item -->
     
                 <div class="row gy-4 mt-3">
                     <div class="col-lg-6 col-md-6">
-                      <a href="tel:+91 97799 81199" style="text-decoration: none;"> <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+                      <a href="tel:022- 26400228" style="text-decoration: none;"> <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
                             <i class="bi bi-telephone"></i>
                             <h3>Call Us</h3>
-                            <p>+91 97799 81199</p>
+                            <p>022- 26400228 / 69102100</p>
                         </div>
                         </a>
                     </div>
                     <!-- End Info Item -->
     
                     <div class="col-lg-6 col-md-6">
-                      <a href="mailto:Bloomwithuscounselling@gmail.com" style=" text-decoration: none;">
+                      <a href="mailto:ayjnihh-mum@nic.in" style=" text-decoration: none;">
                         <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
                             <i class="bi bi-envelope"></i>
                             <h3>Email Us</h3>
-                            <p>Bloomwithuscounselling@gmail.com</p>
+                            <p>ayjnihh-mum@nic.in</p>
                         </div>
                         </a>
                     </div>
@@ -586,7 +586,7 @@ $result = $conn->query($sql);
             <!-- End Contact Form -->
     
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.236945533628!2d76.87522361461943!3d30.676032481636574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fdf8495898ef1%3A0xf43a7fde6c916e21!2sMansa%20Devi%20Complex%2C%20Panchkula%2C%20Haryana%2C%20India%2C%20134109!5e0!3m2!1sen!2s!4v1620319184670!5m2!1sen!2s"  frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.277614198587!2d72.83291717537908!3d19.05152798214797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c93b8ecad21d%3A0x1c3931955f30cfcc!2sALI%20YAVAR%20JUNG%20NATIONAL%20INSTITUTE%20OF%20SPEECH%20AND%20HEARING%20DISABILITIES%20DIVYANGJAN!5e0!3m2!1sen!2sin!4v1726751581075!5m2!1sen!2sin"   frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <!-- End Google Maps -->
         </div>
@@ -644,25 +644,18 @@ document.addEventListener('DOMContentLoaded', function() {
             fetchAndAnimateCounters();
             observer.disconnect();
         }
-    }, { threshold: 0.1 });
+    }, { threshold: 0.5 });
 
     observer.observe(counters);
 });
 
 async function fetchAndAnimateCounters() {
     try {
-        const response = await fetch('get_achievements.php');
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        const data = await response.json();
-        if (data && typeof data === 'object') {
-            animateCounter('peopleTreated', data.people_treated);
-            animateCounter('lecturesSeminars', data.lectures_seminars);
-            animateCounter('yearsExperience', data.years_experience);
-        } else {
-            console.error('Data is not an object:', data);
-        }
+        
+            animateCounter('peopleTreated', 500);
+            animateCounter('lecturesSeminars', 50000);
+            animateCounter('yearsExperience', 1000);
+        
     } catch (error) {
         console.error('Error fetching data:', error);
     }
@@ -679,7 +672,7 @@ function animateCounter(id, endValue) {
         }
         counter.innerText = count;
         count += increment;
-    }, 20); // Adjust the speed
+    }, 10); // Adjust the speed
 }
 </script>
 
